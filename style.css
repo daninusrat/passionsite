@@ -1,0 +1,175 @@
+/* Grundlæggende styling */
+.grid_1-1 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  padding: 16px;
+}
+
+/* Tekstkolonne styling */
+.tekst_col {
+  text-align: left;
+}
+
+.tekst_col h1 {
+  font-size: 24px;
+  margin-bottom: 8px;
+  color: #ffffff;
+}
+
+.tekst_col h2 {
+  font-size: 20px;
+  margin-bottom: 12px;
+  color: #ff3b30;
+}
+
+.tekst_col p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #ffffff;
+}
+
+.img_col {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  max-width: 600px;
+  margin: 32px 0;
+}
+
+/* Billedet skal fylde hele containeren */
+.img_col img {
+  width: 100%;
+  border: 2px solid #ff3b30;
+  border-radius: 8px;
+}
+
+/* Tekst oven på billedet */
+.img_col p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: bold;
+  text-align: center; /* Centreret tekst */
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent sort baggrund */
+  padding: 8px 16px;
+  border-radius: 4px;
+}
+
+/* Desktop layout */
+@media (min-width: 768px) {
+  .grid_1-1 {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+    gap: 32px;
+  }
+
+  .tekst_col {
+    text-align: left; /* Tekst er venstrejusteret på desktop */
+  }
+}
+
+/* Galleri sektion (Mobile-first) */
+.gallery {
+  padding: 16px;
+}
+
+.gallery h2 {
+  text-align: center;
+  color: #ffffff;
+}
+/* Grid layout til mobil */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.grid img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border: 2px solid #4fc3f7;
+  border-radius: 4px;
+}
+/* Desktop layout */
+@media (min-width: 768px) {
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 369px 369px;
+    gap: 16px;
+  }
+
+  /* Billede 1: 1 kolonne, 2 rækker */
+  .billede1 {
+    grid-column: 1 / span 1;
+    grid-row: 1 / span 2;
+  }
+
+  /* Billede 2: 2 kolonner, 1 række */
+  .billede2 {
+    grid-column: 2 / span 2;
+    grid-row: 1 / span 1;
+  }
+
+  /* Billede 3: 1 kolonne, 1 række */
+  .billede3 {
+    grid-column: 2 / span 1;
+    grid-row: 2 / span 1;
+  }
+
+  /* Billede 4: 1 kolonne, 1 række */
+  .billede4 {
+    grid-column: 3 / span 1;
+    grid-row: 2 / span 1;
+  }
+
+  .grid img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    overflow: hidden;
+    border: 2px solid #4fc3f7;
+    border-radius: 4px;
+  }
+}
+
+/* Video Section */
+.videos {
+  padding: 16px;
+  background-color: #1a1d42;
+  color: #ffffff;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+/* Fælles styling for video og iframe */
+.videos video,
+.videos iframe {
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  display: block;
+}
+
+/* Desktop layout */
+@media (min-width: 768px) {
+  .videos {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+
+  .videos video,
+  .videos iframe {
+    margin: 0;
+  }
+}
